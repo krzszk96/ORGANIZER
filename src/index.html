@@ -105,11 +105,16 @@
   <br><hr class='style'><br>
 
   <div>
-    <input class="task_input" type='text' id='task_input' placeholder="Title of the new task" onfocus="this.placeholder = ''"
-onblur="this.placeholder = 'Title of the new task'" />>
-    <button class='pass_btn' onclick='taskBtn()'>add task</button>
+    <input class="task_input" type='text' id='task_input' placeholder="Title of the new event" onfocus="this.placeholder = ''"
+      onblur="this.placeholder = 'Title of the new event'" />>
+    <button class='pass_btn' onclick='addNewevent()'>add task</button>
   </div>
 
+  <ul class="task_list" id="task_list">
+    <li class="to_do_task"><input type="checkbox" class="done_checkbox">Hit the gym</li>
+    <li class="to_do_task"><input type="checkbox" class="done_checkbox">Pay bills</li>
+    <li class="to_do_task"><input type="checkbox" class="done_checkbox">Meet George</li>
+  </ul>
   <!-- stary html -->
 
   <!--<div class='wrap'>

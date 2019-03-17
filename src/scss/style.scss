@@ -95,3 +95,23 @@ hr.style {
 @media only screen and (max-width: 600px){
   .task_input{width: 150px;}
 }
+li.to_do_task{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 8px 8px 8px;
+  margin: 0px 0px 1px -15px;
+  border-style: solid;
+  border-color: red;
+  border-width: 1px;
+  font-size: 15px;
+  transition: 0.2s;
+  border-radius: 10px;
+
+  &:hover{
+    background-color: #595959;
+  }
+}
+ul.task_list {
+  list-style-type: none;
+}

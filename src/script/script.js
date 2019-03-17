@@ -87,7 +87,7 @@ function clickedDay() {
   if(month<10) {month = '0'+ month}
   var dayDate = currentYear + '-' + month + '-' + day;
   console.log(dayDate);
-  //return dayDate;
+  return dayDate;
 }
 
 //dunction to get current date
@@ -102,53 +102,39 @@ function todayDate(){
 
   today = yyyy + '-' + mm + '-' + dd;
 
-  console.log(today);
-  //return today;
+  return today;
 }
-// //function return days diff between dates
-// function daysDifference(){
-//   var startDate = Date.parse(clickedDay());
-//   var endDate = Date.parse(todayDate());
-//   var timeDiff = endDate - startDate;
-//   daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-//   console.log(daysDiff);
-//   //return daysDiff;
-// }
+//function return days diff between dates
+function daysDifference(){
+  var startDate = Date.parse(clickedDay());
+  var endDate = Date.parse(todayDate());
+  var timeDiff = endDate - startDate;
+  daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-// var task = [
-//     'trash',
-//     'grocery',
-//     'run',
-//     'learn',
-// ];
-
-
+  return daysDiff;
+}
 
 document.getElementById("calendar-body").addEventListener("click", function(){
-  clickedDay();
-  todayDate();
-
+  daysDifference();
 });
-// //create new element in the event div
-// function createTodoList(){
-//   var tododiv = document.createElement('div');
-//   tododiv.innerHTML = "test task";
-//   tododiv.setAttribute('class', 'task');
-//   document.getElementById("event").appendChild(tododiv);
-// }
-// //create new task with button on the list
-// // function taskCreate(){
-// //   //create warp for task
-// //   var taskwrap = document.createElement("div");
-// //   taskwrap.setAttribute('class', 'list_wrap');
-// //   taskwrap.setAttribute('id', 'listwrap_id');
-// //   document.getElementById("event").appendChild(taskwrap);
-// //
-// //   //create checkbox in task
-// //   var check = document.createElement("INPUT");
-// //   check.setAttribute("type", "checkbox");
-// //   document.getElementById("listwrap_id").appendChild(check);
-// //
+
+function addNewevent(){
+  var taskLi = document.createElement('li');
+
+  taskLi.classList.add('single-task');
+  taskLi.innerHTML = prepareEvent();
+  document.getElementById('task_list').appendChild(taskLi);
+}
+function prepareEvent(){
+  return '<li class="to_do_task"><input type="checkbox" class="done_checkbox">'+getEventinput()+'</li>'
+}
+function getEventinput(){
+  var newEvent = document.getElementById('task_input').value
+  console.log(newEvent);
+  return newEvent;
+}
+
+
 // //   //create task text element
 // //   var task = document.createElement('div');
 // //   var gettask= document.getElementById("inpt_id").value;
